@@ -14,7 +14,7 @@ vagrant up
 ./bootstrap-ubuntu-xenial.sh
 
 # Create a virtualenv locally
-virtualenv2 . --system-site-packages
+virtualenv . --system-site-packages
 
 # Upgrade and install buildbot
 bin/pip install -U pip zc.buildout
@@ -28,6 +28,9 @@ bin/buildout
 
 # Start odoo
 bin/start_odoo
+
+# Open the browser
+firefox 192.168.33.10:8069
 ```
 
 ## Updating the module
