@@ -1,2 +1,16 @@
 .vagrant
 *.log
+bin
+.installed.cfg
+.mr.developer.cfg
+develop-eggs/
+eggs/
+etc/
+include/
+lib/
+local/
+parts/
+pip-selfcheck.json
+share/
+src/
+upgrade.py
