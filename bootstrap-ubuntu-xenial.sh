@@ -5,7 +5,7 @@ sudo apt-get install -y git python2.7 postgresql nano python-virtualenv xfonts-7
 # Build
 sudo apt-get install -y gcc python2.7-dev libxml2-dev \
     libxslt1-dev libevent-dev libsasl2-dev libldap2-dev libpq-dev \
-    libpng12-dev libjpeg-dev
+    libpng12-dev libjpeg-dev libxmlsec1-dev
 # Ubuntu xenial
 sudo apt-get install -y nodejs-legacy
 sudo apt-get install -y fontconfig xfonts-base
