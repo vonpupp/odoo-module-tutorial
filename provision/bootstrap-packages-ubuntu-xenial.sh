@@ -7,24 +7,15 @@ sudo apt-get update
 sudo apt-get install -y git python2.7 postgresql nano python-virtualenv \
     xfonts-75dpi wget postgresql
 
-# Banco de dados
-sudo systemctl enable postgresql
-sudo systemctl restart postgresql
-sudo -u postgres createuser --createdb $(whoami)
-createdb $(whoami)
-
 # Bibliotecas e pacotes de desenvolvimento
 sudo apt-get install -y gcc python2.7-dev libxml2-dev \
     libxslt1-dev libevent-dev libsasl2-dev libldap2-dev libpq-dev \
-    libpng12-dev libjpeg-dev libxmlsec1-dev
+    libpng12-dev libjpeg-dev libxmlsec1-dev npm
 
 # Pacotes especificos do ubuntu xenial
-sudo apt-get install -y nodejs-legacy
-sudo apt-get install -y fontconfig xfonts-base
-sudo apt-get install -y wkhtmltopdf
+sudo apt-get install -y nodejs-legacy fontconfig xfonts-base wkhtmltopdf
 
-# Node e dependencias
-sudo apt-get install -y npm
+# Bibliotecas do node
 sudo npm install -g less
 
 # Relatórios
@@ -34,3 +25,4 @@ wget http://ftp.us.debian.org/debian/pool/main/libj/libjpeg-turbo/libjpeg62-turb
 # wget http://nightly.odoo.com/extra/wkhtmltox-0.12.1.2_linux-jessie-amd64.deb
 # Tem biblioteca diretamente do wkhtmltopdf no xenial
 sudo dpkg -i *.deb
+cd -

@@ -13,22 +13,15 @@ vagrant up
 # ssh to the VM
 vagrant ssh
 
-# Bootstrap
+# Bootstrap packages
 cd /vagrant
-./bootstrap-ubuntu-xenial.sh
+./provision/bootstrap-packages-ubuntu-xenial.sh
+
+# Bootstrap database
+./provision/bootstrap-database.sh
 
 # Create a virtualenv locally
-virtualenv . --system-site-packages
-
-# Upgrade and install buildbot
-bin/pip install -U pip zc.buildout
-
-# Create config files
-printf "[buildout]\n\nextends = https://raw.githubusercontent.com/odoo-brazil/odoo-brazil-buildout/10.0/default.cfg" >> common.cfg
-printf "[buildout]\n\nextends = common.cfg" >> buildout.cfg
-
-# Run buildout
-bin/buildout
+./provision/bootstrap-environment.sh
 
 # Start odoo
 bin/start_odoo
