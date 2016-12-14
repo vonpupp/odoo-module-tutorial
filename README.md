@@ -10,7 +10,11 @@ Example on how to [build a module based on v10]
 # Start the VM
 vagrant up
 
+# ssh to the VM
+vagrant ssh
+
 # Bootstrap
+cd /vagrant
 ./bootstrap-ubuntu-xenial.sh
 
 # Create a virtualenv locally
@@ -43,7 +47,8 @@ bin/start_odoo -d ubuntu -u openacademy --stop-after-init
 ## Roadmap
 
 - [X] Use buildout
-- [ ] Create a module
-- [ ] Unit test
+- [ ] Create a basic module skeleton
+- [ ] Create first test
 - [ ] Travis
+- [ ] Use TDD
 - [ ] Functional test
