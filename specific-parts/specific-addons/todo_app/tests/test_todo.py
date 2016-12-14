@@ -9,4 +9,4 @@ class TestTodo(TransactionCase):
         "Create a simple Todo"
         Todo = self.env['todo.task']
         task = Todo.create({'name': 'Test Task'})
-        self.assertEqual(task.is_done, True)
+        self.assertEqual(task.is_done, False)

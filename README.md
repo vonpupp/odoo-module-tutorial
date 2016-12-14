@@ -4,6 +4,20 @@ Example on how to [build a module based on v10]
 
 [build a module based on v10]: https://www.odoo.com/documentation/10.0/howtos/backend.html
 
+[![Travis-CI](https://img.shields.io/travis/vonpupp/odoo-module-tutorial.svg)](https://travis-ci.org/vonpupp/odoo-module-tutorial)
+[![Codecov](https://img.shields.io/codecov/c/github/vonpupp/odoo-module-tutorial/master.svg)](https://codecov.io/gh/vonpupp/odoo-module-tutorial)
+[![Scrutinizer](https://img.shields.io/scrutinizer/g/vonpupp/odoo-module-tutorial.svg)](https://scrutinizer-ci.com/g/vonpupp/odoo-module-tutorial/)
+[![Stories in
+Ready](https://badge.waffle.io/vonpupp/odoo-module-tutorial.png?label=ready&title=Ready)](http://waffle.io/vonpupp/odoo-module-tutorial)
+[![Stories in
+progress](https://badge.waffle.io/vonpupp/odoo-module-tutorial.png?label=progress&title=Progress)](http://waffle.io/vonpupp/odoo-module-tutorial)
+
+Throughput Graph
+
+[![Throughput
+Graph](https://graphs.waffle.io/vonpupp/odoo-module-tutorial/throughput.svg)](https://waffle.io/vonpupp/odoo-module-tutorial/metrics)
+
+
 ## Creating a development environment using virtualbox
 
 ```
@@ -33,15 +47,22 @@ firefox 192.168.33.10:8069
 ## Updating the module
 
 ```
-bin/start_odoo -d ubuntu -u openacademy --stop-after-init
+# Update a specific module
+bin/start_odoo -d ubuntu -u todo_app --stop-after-init
+
+# Unit test a specific app using
+bin/start_odoo -d ubuntu -i todo_app --test-enable
 ```
 
 
 ## Roadmap
 
 - [X] Use buildout
-- [ ] Create a basic module skeleton
-- [ ] Create first test
-- [ ] Travis
+- [X] Create a basic module skeleton
+- [X] Create first test
+- [X] Travis
 - [ ] Use TDD
+- [ ] Create a view
+- [ ] Add coverage
+- [ ] Add code quality
 - [ ] Functional test
