@@ -13,6 +13,7 @@
     'depends': [
     ],
     'data': [
+        'views/todo_menu.xml'
     ],
     'demo': [
     ],
