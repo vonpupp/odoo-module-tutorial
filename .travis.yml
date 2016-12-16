@@ -50,6 +50,9 @@ install:
 script:
   - provision/travis_run_script
 
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
 #after_success:
 #  - bin/start_openerp &
 #  - bin/pybot -v CONFIG:config_80.py robot/sale_stock_invoice_workflow.robot

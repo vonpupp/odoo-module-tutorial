@@ -61,8 +61,8 @@ bin/start_odoo -d ubuntu -i todo_app --test-enable
 - [X] Create a basic module skeleton
 - [X] Create first test
 - [X] Travis
-- [ ] Use TDD
-- [ ] Create a view
+- [X] Create a view
+- [X] Use TDD
 - [ ] Add coverage
 - [ ] Add code quality
 - [ ] Functional test
