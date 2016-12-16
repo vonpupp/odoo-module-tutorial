@@ -66,3 +66,4 @@ bin/start_odoo -d ubuntu -i todo_app --test-enable
 - [ ] Add coverage
 - [ ] Add code quality
 - [ ] Functional test
+- [ ] HTML5 layer on top of the JSONRPC API
