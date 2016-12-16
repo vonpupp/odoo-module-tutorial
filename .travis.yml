@@ -45,6 +45,7 @@ before_install:
   - provision/bootstrap-environment.sh
 
 install:
+  - pip install python-coveralls
   - bin/buildout -N -t 20
 
 script:
@@ -52,6 +53,7 @@ script:
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
+  - coveralls
 
 #after_success:
 #  - bin/start_openerp &
