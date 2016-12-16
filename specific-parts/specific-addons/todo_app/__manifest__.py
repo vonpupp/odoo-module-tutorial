@@ -13,7 +13,8 @@
     'depends': [
     ],
     'data': [
-        'views/todo_menu.xml'
+        'views/todo_menu.xml',
+        'views/todo_view.xml'
     ],
     'demo': [
     ],
