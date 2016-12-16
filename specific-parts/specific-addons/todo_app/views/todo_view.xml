@@ -4,12 +4,22 @@
         <field name="name">To-do Task Form</field>
         <field name="model">todo.task</field>
         <field name="arch" type="xml">
-            <form string="To-do Task">
-                <group>
-                    <field name="name"/>
-                    <field name="is_done"/>
-                    <field name="active" readonly="1"/>
-                </group>
+            <form>
+                <header>
+                    <!-- Buttons -->
+                    <button name="do_toggle_done" type="object"
+                        string="Toggle Done" class="oe_highlight" />
+                    <button name="do_clear_done" type="object"
+                        string="Clear All done" />
+                </header>
+                <sheet>
+                    <!-- Content: -->
+                    <group>
+                        <field name="name"/>
+                        <field name="is_done"/>
+                        <field name="active" readonly="1"/>
+                    </group>
+                </sheet>
             </form>
         </field>
     </record>
