@@ -63,7 +63,10 @@ bin/start_odoo -d ubuntu -i todo_app --test-enable
 - [X] Travis
 - [X] Create a view
 - [X] Use TDD
+- [X] Add code quality
 - [ ] Add coverage
-- [ ] Add code quality
+- [ ] Tests with runbot?
 - [ ] Functional test
 - [ ] HTML5 layer on top of the JSONRPC API
+- [ ] Add documentation (sphinx)
+- [ ] Add UML
