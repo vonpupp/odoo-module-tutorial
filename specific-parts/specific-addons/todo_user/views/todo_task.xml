@@ -1,8 +1,10 @@
 <?xml version="1.0"?>
 <odoo>
+    <!-- menu -->
     <record id="todo_app.menu_todo_task" model="ir.ui.menu">
         <field name="name">My To-Do</field>
     </record>
+    <!-- form -->
     <record id="view_form_todo_task_inherited" model="ir.ui.view">
         <field name="name">Todo Task form - User extension</field>
         <field name="model">todo.task</field>
@@ -25,6 +27,7 @@
             </sheet>
         </field>
     </record>
+    <!-- tree -->
     <record id="view_tree_todo_task_inherited" model="ir.ui.view">
         <field name="name">To-do Task Tree - User extension</field>
         <field name="model">todo.task</field>
@@ -35,6 +38,7 @@
             </field>
         </field>
     </record>
+    <!-- filters -->
     <record id="view_filter_todo_task_inherited" model="ir.ui.view">
         <field name="name">Todo Task tree - User extension</field>
         <field name="model">todo.task</field>
@@ -45,6 +49,12 @@
                 <filter name="filter_my_tasks" string="My Tasks" domain="[('user_id', 'in', [uid,False])]" />
                 <filter name="filter_not_assigned" string="Not Assigned" domain="[('user_id', '=', False)]" />
             </field>
+        </field>
+    </record>
+    <!-- default filter -->
+    <record model="ir.actions.act_window" id="todo_app.action_todo_task">
+        <field name="context">
+            {'search_default_filter_my_tasks': True}
         </field>
     </record>
 </odoo>
