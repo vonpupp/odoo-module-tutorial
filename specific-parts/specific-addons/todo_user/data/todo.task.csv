@@ -1,0 +1,6 @@
+"id","name","user_id/id","date_deadline","is_done"
+"todo_task_5","Install Odoo","base.user_root","","False"
+"todo_task_6","Create dev database","base.user_root","","False"
+"todo_task_11","demo user task","base.user_root","","False"
+"todo_task_12","administrator task test","base.user_root","","False"
+"todo_task_13","social task","base.user_root","2016-12-21","False"
