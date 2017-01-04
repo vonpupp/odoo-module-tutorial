@@ -25,6 +25,8 @@ class TestWizard(TransactionCase):
         self.todo2 = Todo.create({
             'name': 'Todo2'
         })
+        Wizard = self.env['todo.wizard'].sudo(demo_user)
+        self.wizard = Wizard.create({})
 
     def test_populate_tasks(self):
         "Populate tasks button should add two tasks"

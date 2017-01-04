@@ -37,7 +37,7 @@ class TodoWizard(models.TransientModel):
     def do_count_tasks(self):
         Task = self.env['todo.task']
         count = Task.search_count([('is_done', '=', False)])
-        raise exceptions.Warning('There are %d active tasks.', count)
+        raise exceptions.Warning('There are %d active tasks.' % count)
 
     @api.multi
     def _reopen_form(self):
