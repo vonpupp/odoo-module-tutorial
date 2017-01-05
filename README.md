@@ -20,7 +20,7 @@ Graph](https://graphs.waffle.io/vonpupp/odoo-module-tutorial/throughput.svg)](ht
 
 ## Creating a development environment using virtualbox
 
-```
+```sh
 # Start the VM
 vagrant up
 
@@ -46,7 +46,7 @@ firefox 192.168.33.10:8069
 
 ## Creating a module using mrbob odoo templates
 
-```
+```sh
 # Create a virtual env
 virtualenv2 .venv
 source .venv/bin/activate
@@ -101,7 +101,7 @@ source .venv/bin/activate
 
 ## Updating the module
 
-```
+```sh
 # Update a specific module
 bin/start_odoo -d ubuntu -u todo_app --stop-after-init
 
