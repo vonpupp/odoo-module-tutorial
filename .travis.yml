@@ -1,61 +1,57 @@
-language: python
 dist: xenial
+sudo: false
+# BR l10n requires sudo
+#sudo: required
 
+language: python
 python:
   - "2.7"
-
-sudo: required
 
 cache:
   pip: true
   directories:
     - $HOME/buildout-cache
 
-#addons:
-#  apt:
-#    packages:
-#      - expect-dev  # provides unbuffer utility
-#      - python-lxml  # because pip installation is slow
-#      - libappindicator1
-#      - fonts-liberation
-#      - chromium-browser
-#      - chromium-chromedriver
-
-env:
-#  - VERSION="10.0" DOC="0" ROBOT="0"
-#  - VERSION="10.0" DOC="1" ROBOT="0"
-#  - VERSION="10.0" DOC="0" ROBOT="1"
-#  - VERSION="10.0" ODOO_REPO="odoo/odoo"
-  - VERSION="10.0" ODOO_REPO="OCA/OCB"
-
 virtualenv:
   system_site_packages: true
 
-before_install:
-#  - "export DISPLAY=:99.0"
-#  - "sh -e /etc/init.d/xvfb start"
-#  - sleep 5
-#  - git clone https://github.com/OCA/maintainer-quality-tools.git ${HOME}/maintainer-quality-tools
-#  - export PATH=${HOME}/maintainer-quality-tools/travis:${PATH}
-#  - ./travis_install_buildout
-  - sudo locale-gen en_US en_US.UTF-8 pt_BR.UTF-8
-  - sudo dpkg-reconfigure locales
-  - provision/bootstrap-packages-ubuntu-xenial.sh
-  - provision/bootstrap-database.sh
-  - provision/bootstrap-environment.sh
+addons:
+  apt:
+    packages:
+      - expect-dev   # provides unbuffer utility
+      - python-lxml  # because pip installation is slow
+
+env:
+  - VERSION="10.0" LINT_CHECK="1"
+  - VERSION="10.0" LINT_CHECK="0" ODOO_REPO="odoo/odoo"
+  - VERSION="10.0" LINT_CHECK="0" ODOO_REPO="OCA/OCB"
+  - VERSION="10.0" LINT_CHECK="0" UNIT_TEST="1"
+  # TODO: DOC, ROBOT
+
+  # Needed for BR l10n
+#before_install:
+#  - sudo locale-gen en_US en_US.UTF-8 pt_BR.UTF-8
+#  - sudo dpkg-reconfigure locales
+#  - provision/bootstrap-packages-ubuntu-xenial.sh
+#  - provision/bootstrap-database.sh
+#  - provision/bootstrap-environment.sh
 
 install:
-  - pip install python-coveralls
-  - bin/buildout -N -t 20
+  - pip install coveralls  # Force install coveralls in all cases of MQT for self_test script.
+  - pip install anybox.testing.openerp      # Faster, no BR l10n
+  #- bin/buildout -N -t 20                   # BR l10n
+  - git clone https://github.com/it-projects-llc/maintainer-quality-tools.git ${HOME}/maintainer-quality-tools
+  - export PATH=${HOME}/maintainer-quality-tools/travis:${PATH}
+  - travis_install_nightly
 
 script:
-  - provision/travis_run_script
+#  - coverage run --append ./travis/travis_run_tests
+#  - coverage run --append ./travis/self_tests
+  - travis_run_tests
 
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
-  - coveralls
+#  - TESTS="1" LINT_CHECK="0" travis_after_tests_success
+    coveralls
 
-#after_success:
-#  - bin/start_openerp &
-#  - bin/pybot -v CONFIG:config_80.py robot/sale_stock_invoice_workflow.robot
-#  - bin/travis-sphinx deploy
+notifications:
+  email: false

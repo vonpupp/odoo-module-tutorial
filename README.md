@@ -5,12 +5,10 @@ Example on how to [build a module based on v10]
 [build a module based on v10]: https://www.odoo.com/documentation/10.0/howtos/backend.html
 
 [![Travis-CI](https://img.shields.io/travis/vonpupp/odoo-module-tutorial.svg)](https://travis-ci.org/vonpupp/odoo-module-tutorial)
-[![Codecov](https://img.shields.io/codecov/c/github/vonpupp/odoo-module-tutorial/master.svg)](https://codecov.io/gh/vonpupp/odoo-module-tutorial)
+[![Coveralls Status](https://coveralls.io/repos/vonpupp/odoo-module-tutorial/badge.svg)](https://coveralls.io/r/vonpupp/odoo-module-tutorial)
 [![Scrutinizer](https://img.shields.io/scrutinizer/g/vonpupp/odoo-module-tutorial.svg)](https://scrutinizer-ci.com/g/vonpupp/odoo-module-tutorial/)
-[![Stories in
-Ready](https://badge.waffle.io/vonpupp/odoo-module-tutorial.png?label=ready&title=Ready)](http://waffle.io/vonpupp/odoo-module-tutorial)
-[![Stories in
-progress](https://badge.waffle.io/vonpupp/odoo-module-tutorial.png?label=progress&title=Progress)](http://waffle.io/vonpupp/odoo-module-tutorial)
+[![Stories in Ready](https://badge.waffle.io/vonpupp/odoo-module-tutorial.png?label=ready&title=Ready)](http://waffle.io/vonpupp/odoo-module-tutorial)
+[![Stories in progress](https://badge.waffle.io/vonpupp/odoo-module-tutorial.png?label=progress&title=Progress)](http://waffle.io/vonpupp/odoo-module-tutorial)
 
 Throughput Graph
 
