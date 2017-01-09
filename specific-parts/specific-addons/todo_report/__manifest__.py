@@ -10,8 +10,10 @@
     'license': 'AGPL-3',
     'author': 'vonpupp',
     'depends': [
+        'todo_kanban'
     ],
     'data': [
+        'reports/todo_report.xml'
     ],
     'demo': [
     ],
