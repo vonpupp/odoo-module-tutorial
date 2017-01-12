@@ -1,7 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <odoo>
-  <template id="hello" name="Hello Template">
-    <h1>Hello World!</h1>
+  <template id="hello" name="Hello World">
+    <t t-call="website.layout">
+      <h1>Hello World!</h1>
+    </t>
+  </template>
+
+  <template id="detail" name="Todo Task Detail">
+    <t t-call="website.layout">
+      <div id="wrap" class="container">
+        <h1 t-field="task.name"/>
+        <p>Responsible: <span t-field="task.user_id"/></p>
+        <p>Deadline: <span t-field="task.date_deadline"/></p>
+      </div>
+    </t>
+  </template>
+
+  <template id="add" name="Add todo task">
+    <t t-call="website.layout">
+      <t t-set="additional_title">Add todo</t>
+      <div id="wrap" class="container">
+        <div class="row">
+          <section id="forms">
+            <form method="post"
+              class="s_website_form container-fluid form-horizontal"
+              action="/website_form/"
+              data-model_name="todo.task"
+              data-sucess_page="/todo"
+              enctype="multipart/form-data" >
+
+
+              <div class="form-group">
+                <div class="col-md-offset-3 col-md-7 col-sm-offset-4 col-sm-8">
+                  <a class="o_website_form_send btn btn-primary btn-lg">
+                    Save
+                  </a>
+                  <span id="o_website_form_result"></span>
+                </div>
+              </div>
+            </form>
+          </section>
+        </div>
+      </div>
+    </t>
   </template>
 </odoo>

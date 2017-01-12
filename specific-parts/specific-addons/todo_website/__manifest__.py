@@ -10,10 +10,13 @@
     'license': 'AGPL-3',
     'author': 'vonpupp',
     'depends': [
-        'todo_kanban'
+        'todo_kanban',
+        'website',
+        'website_form'
     ],
     'data': [
-        'views/todo_web.xml'
+        'views/todo_web.xml',
+        'views/todo_templates.xml',
     ],
     'demo': [
     ],

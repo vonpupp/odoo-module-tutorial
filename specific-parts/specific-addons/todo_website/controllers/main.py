@@ -3,11 +3,24 @@ from odoo import http
 from odoo.http import request
 
 
-class Todo(http.Controller):
+class Main(http.Controller):
 
     """Controller example for the website frontend"""
 
-    @http.route('/hello', auth='public')
-    def hello_world(self, **kwargs):
-        """TODO: to be defined1. """
-        return request.render('todo_website.hello')
+    @http.route('/todo', auth='user', website=True)
+    def index(self, **kwargs):
+        TodoTask = request.env['todo.task']
+        tasks = TodoTask.search([])
+        return request.render(
+            'todo_website.index', {'tasks': tasks})
+
+    @http.route('/todo/<model("todo.task"):task>', website=True)
+    def index(self, task, **kwargs):
+        return request.render(
+            'todo_website.detail', {'task': task})
+
+    @http.route('/todo/add', website=True)
+    def add(self, **kwargs):
+        users = request.env['res.users'].search([])
+        return request.render(
+            'todo_website.add', {'users': users})
