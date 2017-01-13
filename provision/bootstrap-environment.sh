@@ -7,8 +7,8 @@ virtualenv . --system-site-packages
 bin/pip install -U pip zc.buildout
 
 # Create config files
-printf "[buildout]\n\nextends = https://raw.githubusercontent.com/odoo-brazil/odoo-brazil-buildout/10.0/default.cfg" > common.cfg
-printf "[buildout]\n\nextends = common.cfg" > buildout.cfg
+#printf "[buildout]\n\nextends = https://raw.githubusercontent.com/odoo-brazil/odoo-brazil-buildout/10.0/default.cfg" > common.cfg
+#printf "[buildout]\n\nextends = common.cfg" > buildout.cfg
 
 # Run buildout
 bin/buildout

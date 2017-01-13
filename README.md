@@ -28,6 +28,8 @@ vagrant ssh
 # Bootstrap packages
 cd /vagrant
 ./provision/bootstrap-packages-ubuntu-xenial.sh
+# or use:
+#./provision/bootstrap-packages-ubuntu-trusty.sh
 
 # Bootstrap database
 ./provision/bootstrap-database.sh
@@ -117,17 +119,17 @@ bin/start_odoo -d ubuntu -i todo_app --test-enable
 - [X] Create a view
 - [X] Use TDD
 - [X] Add code quality
-- [ ] Add maintainer quality tools
+- [X] Learn to use bob templates
+- [X] Add maintainer quality tools
 - [ ] Add coverage
-- [ ] Tests with runbot?
+- [ ] Docker
 - [ ] Add documentation (sphinx)
 - [ ] Add UML
-- [ ] Deploy
-- [ ] Docker
-- [ ] Functional test
 - [ ] HTML5 layer on top of the JSONRPC API
-- [ ] Learn to use bob templates
-- [ ] Learn to user openupgrade (OCA)?
-- [ ] Learn commit style
+- [ ] Learn commit style (https://www.odoo.com/documentation/10.0/reference/guidelines.html#git)
 - [ ] Use odoo-bin
 - [ ] Use watchdog
+- [ ] Deploy
+- [ ] Functional test
+- [ ] Learn to user openupgrade (OCA)?
+- [ ] Tests with runbot?
