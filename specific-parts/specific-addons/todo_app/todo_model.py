@@ -2,7 +2,6 @@
 
 from odoo import models, fields, api
 
-
 class TodoTask(models.Model):
     _name = 'todo.task'
     _description = 'To-do Task'

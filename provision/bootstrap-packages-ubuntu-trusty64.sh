@@ -25,3 +25,7 @@ wget http://ftp.us.debian.org/debian/pool/main/libj/libjpeg-turbo/libjpeg62-turb
 wget http://nightly.odoo.com/extra/wkhtmltox-0.12.1.2_linux-jessie-amd64.deb
 sudo dpkg -i *.deb
 cd -
+
+# Ativar postgres
+sudo /etc/init.d/postgres enable
+sudo /etc/init.d/postgres start

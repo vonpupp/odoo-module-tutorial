@@ -1,6 +1,6 @@
 # ODOO MODULE TUTORIAL
 
-Example on how to [build a module based on v10]
+Example on how to build a module based on Odoo v10.
 
 [build a module based on v10]: https://www.odoo.com/documentation/10.0/howtos/backend.html
 
@@ -12,13 +12,15 @@ Example on how to [build a module based on v10]
 
 Throughput Graph
 
-[![Throughput
-Graph](https://graphs.waffle.io/vonpupp/odoo-module-tutorial/throughput.svg)](https://waffle.io/vonpupp/odoo-module-tutorial/metrics)
+[![Throughput Graph](https://graphs.waffle.io/vonpupp/odoo-module-tutorial/throughput.svg)](https://waffle.io/vonpupp/odoo-module-tutorial/metrics)
 
 
 ## Creating a development environment using virtualbox
 
 ```sh
+# Choose the platform (if necessary)
+ln -sf provision/Vagrantfile-virtualbox-ubuntu-xenial64 Vagrantfile
+
 # Start the VM
 vagrant up
 
@@ -27,9 +29,7 @@ vagrant ssh
 
 # Bootstrap packages
 cd /vagrant
-./provision/bootstrap-packages-ubuntu-xenial.sh
-# or use:
-#./provision/bootstrap-packages-ubuntu-trusty.sh
+./provision/bootstrap-packages-ubuntu-xenial64.sh
 
 # Bootstrap database
 ./provision/bootstrap-database.sh
@@ -112,24 +112,22 @@ bin/start_odoo -d ubuntu -i todo_app --test-enable
 
 ## Roadmap
 
+List of desirable features on this repo (out of the scope of the book):
+
 - [X] Use buildout
-- [X] Create a basic module skeleton
-- [X] Create first test
 - [X] Travis
-- [X] Create a view
-- [X] Use TDD
 - [X] Add code quality
-- [X] Learn to use bob templates
+- [X] Add bob templates
 - [X] Add maintainer quality tools
-- [ ] Add coverage
-- [ ] Docker
 - [ ] Add documentation (sphinx)
 - [ ] Add UML
 - [ ] HTML5 layer on top of the JSONRPC API
 - [ ] Learn commit style (https://www.odoo.com/documentation/10.0/reference/guidelines.html#git)
 - [ ] Use odoo-bin
-- [ ] Use watchdog
 - [ ] Deploy
 - [ ] Functional test
 - [ ] Learn to user openupgrade (OCA)?
 - [ ] Tests with runbot?
+- [ ] Review: Add coverage (problems with MQT)
+- [ ] Review: Docker (problem with dbus and systemd)
+- [ ] Review: Use watchdog (without watchdog XML files automatically reloaded, code is not)
