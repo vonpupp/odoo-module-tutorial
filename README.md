@@ -109,6 +109,26 @@ bin/start_odoo -d ubuntu -u todo_app --stop-after-init
 bin/start_odoo -d ubuntu -i todo_app --test-enable
 ```
 
+## Debug
+
+```sh
+# Local debug
+# Use ipdb as usual or start odoo with the logfile param
+bin/start_odoo --logfile=~/odoospam.log
+
+# Remote debug
+
+# Source: http://stackoverflow.com/a/29451814
+# Install epdb on the remote host
+pip install epdb
+
+# REMOTE: Add a break point
+import epdb; epdb.serve()
+
+# LOCAL: Attach
+python -c "import epdb; epdb.connect()"
+```
+
 
 ## Roadmap
 
